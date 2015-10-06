@@ -4,7 +4,7 @@
 # Email: astudent@sandiego.edu
 
 .text	# indicates that what follows is code, not data
-.globl rotate  # declare global name called "_rotate"
+.globl rotate  # declare global name called "rotate"
 
 rotate:
 	# The following lines set up the stack
