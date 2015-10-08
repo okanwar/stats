@@ -4,12 +4,9 @@
 # Email: astudent@sandiego.edu
 
 .text	# indicates that what follows is code, not data
-.globl _rotate  # declare global name called "_rotate"
-				# C requires that all functions have a leading understore
-				# added to them by the assembler, hence "_rotate" instead of
-				# just "rotate" for the name of our function.
+.globl rotate  # declare global name called "rotate"
 
-_rotate:
+rotate:
 	# The following lines set up the stack
 	# Do NOT modify them.
 	pushq	%rbp                
