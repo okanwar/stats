@@ -16,7 +16,7 @@ rotate-test: rotate-test.c rotate.s
 	$(CC) $(CFLAGS) -o $@ $^
 
 comp280-p04-%.tar.gz: stats.c rotate.s project04.txt
-	tar -czf $@ $<
+	tar -czf $@ $^
 
 clean:
 	$(RM) $(TARGET) *.o *.tar.gz
