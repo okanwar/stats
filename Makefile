@@ -15,7 +15,7 @@ readfile.o: readfile.c readfile.h
 rotate-test: rotate-test.c rotate.s 
 	$(CC) $(CFLAGS) -o $@ $^
 
-comp280-p04-%.tar.gz: stats.c rotate.s project04.txt
+comp280-p03-%.tar.gz: stats.c readfile.h readfile.c rotate.s rotate-test.c Makefile project03.txt
 	tar -czf $@ $^
 
 clean:
