@@ -130,8 +130,21 @@ double median(double *p, int *size){
  *@param size is the number of elements filled in the array
  *@return does not return anything
  */
+sort(double *p, int *size){
+	int i;
+	for(i = 0; i < *size; i++) {
+		int minimum = i;
+		int k;
+		for(k = i; k < *size; k++) {
+			if(p[minimum] > p[k])
+				minimum = k;
+		}
 
-	return NULL;
+	double temp = p[i];
+	p[i] = p[minimum];
+	p[minimum] = temp;
+
+	}
 }
 
 
