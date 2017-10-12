@@ -20,8 +20,8 @@
 double *getValues(int *size, int *capacity, char *filename);
 double mean(double *p, int *size);
 double median(double *p, int *size);
-double stdev(double *p, int size *size);
-void sort(double *p, int *size, double ave);
+double stdev(double *p, int *size, double ave);
+void sort(double *p, int *size);
 
 /**
  * This function takes in the file name from the command line and prints out
@@ -54,13 +54,12 @@ int main(int argc, char *argv[]) {
 	printf("num values:\t%d\n",size);
 	printf("mean:\t\t%.3f\n",mean(array, &size));
 	printf("median:\t\t%.3f\n",median(array, &size));
-	printf("std dev:\t%.3f\n",stdev(array, &size, mean(array, &size))); 
+	printf("std dev:\t%.3f\n",stdev(array, &size,mean(array, &size))); 
 	printf("\nUnused array slots: %i\n",(capacity - size));
 			
-	free(arr);
+	free(array);
 	return 0;
-}
-
+	}	      
 /** 
  * Function creates an array of doubles read in from the file
  *
@@ -102,7 +101,7 @@ double *getValues(int *size, int *capacity, char *filename) {
 
 	closeFile();
 	return p;
-
+}
 /**
  *This function returns the median of the elements in the array
  *
@@ -130,7 +129,7 @@ double median(double *p, int *size){
  *@param size is the number of elements filled in the array
  *@return does not return anything
  */
-sort(double *p, int *size){
+void sort(double *p, int *size){
 	int i;
 	for(i = 0; i < *size; i++) {
 		int minimum = i;
@@ -146,12 +145,38 @@ sort(double *p, int *size){
 
 	}
 }
+/**
+ *the standard deviation of the elements in the array
+ *
+ *@param p is the array to read from
+ *@param size is the number of elements filled in the array
+ *@param ave is the mean of the elements in the array
+ *@return Returns standard deviation
+ */
+double stdev(double *p, int *size,double ave){
+	double sum= 0.0;
+	int i = 0;
+	while(i < *size){
+	sum +=((p[i] - ave) * (p[i] - ave));
+		i++;
+	 }	
 
+	sum = sum / (*size-1);
+	return sqrt(sum);
+	}
+/**
+ *the mean of the elements in the array
+ *
+ *@param p is the array where the data is located
+ *@param size is the number of elements in the array
+ *@return Returns the mean of the array
+ */
 
-
-
-
-
-
-
-
+double mean(double *p, int *size){
+	double sum = 0.0;
+	int i = 0;
+	for(i = 0 ; i < *size; i++){
+		sum += p[i];
+	}
+	return sum / *size;
+ }
