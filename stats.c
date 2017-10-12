@@ -103,11 +103,42 @@ double *getValues(int *size, int *capacity, char *filename) {
 	closeFile();
 	return p;
 
-	/*
-	 *
-	 *
-	 * TODO: Implement this function
-	 * Use the readfile library to read from the file.
-	 */
+/**
+ *This function returns the median of the elements in the array
+ *
+ *@param p is the array to analyze
+ *@param size is the number of elements filled in the array
+ *@return gives the median of the array elements
+ */
+double median(double *p, int *size){
+	sort(p,size);
+
+	if(*size % 2 == 0){
+		int index = *size /2;
+		return p[index];
+	}
+	else {
+			int index = (*size / 2);
+			return p[index];
+	}
+}
+
+/**
+ * Sorts the array for the median function
+ *
+ *@param p is the array to analyze
+ *@param size is the number of elements filled in the array
+ *@return does not return anything
+ */
+
 	return NULL;
 }
+
+
+
+
+
+
+
+
+
