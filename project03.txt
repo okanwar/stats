@@ -1,9 +1,14 @@
 COMP 280 - Project 03 (Pass-by-Reference and x86-64 Functions)
 
-1. Author:
+1. Author: Om Kanwar
 
-2. Total Hours Spent on Project:
+2. Total Hours Spent on Project: 6-8
 
-3. Project Bucks Used:
+3. Project Bucks Used: 0
 
 5. (Optional) Additional Comments:
+Unsure if my indentation and whitespacing is correct throughout code, but I
+believe it is.
+Copied entire directory to my local PC, wrote my code, and reformatted and
+added everything back into vim at the end. Then debugged code with compiler
+and ran Valgrind.
